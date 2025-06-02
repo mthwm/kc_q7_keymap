@@ -31,10 +31,10 @@ The home row mods are configured as follows:
 
 ## Layer Switching
 
-- FN1: Accessed by holding the key to the right of Right Control in MAC_BASE layer
+- FN3: Accessed by holding the key to the right of Right Control in MAC_BASE layer
 - FN2: Accessed by holding the key to the right of Right Control in WIN_BASE layer
 - FN3: Accessed by holding the rightmost key in the bottom row
-- GAMING: Toggle on/off by pressing H while in FN1 layer
+- GAMING: Toggle on/off by pressing H while in FN3 layer (position of GAMING_TOG key)
 
 ## Compilation and Flashing
 
@@ -63,4 +63,4 @@ For optimal usage:
 
 ## Gaming Mode
 
-The dedicated gaming layer disables home row mods for a traditional typing experience, which is often preferred for gaming where holding keys is common. 
+The dedicated gaming layer disables home row mods for a traditional typing experience, which is often preferred for gaming where holding keys is common. To toggle the gaming mode, press the H key while in the FN3 layer. 
