@@ -64,14 +64,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN1] = LAYOUT_ansi_72(
         KC_GRV,  KC_BRID,  KC_BRIU,  KC_NO,   KC_NO,   RM_VALD, RM_VALU, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE,  KC_VOLD, KC_VOLU,  _______,           _______, RM_TOGG,
         RM_TOGG, RM_NEXT,  RM_VALU,  RM_HUEU, RM_SATU, RM_SPDU, _______, _______, _______, _______, _______,  _______, _______,  _______,           _______, _______,
-        _______, RM_PREV,  RM_VALD,  RM_HUED, RM_SATD, RM_SPDD, _______, _______, _______, _______, _______,  _______,           _______,           _______, _______,
+        _______, RM_PREV,  RM_VALD,  RM_HUED, RM_SATD, RM_SPDD, GAMING_TOG, _______, _______, _______, _______,  _______,           _______,           _______, _______,
         _______,           _______,  _______, _______, _______, _______, NK_TOGG, _______, _______, _______,  _______,           _______,           _______, _______,
         _______, _______,  _______,                             _______,                            _______,  _______, _______,  _______,  _______, _______, _______),
 
     [_FN2] = LAYOUT_ansi_72(
         KC_GRV,  KC_BRID,  KC_BRIU,  KC_TASK, KC_FLXP, RM_VALD, RM_VALU, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE,  KC_VOLD, KC_VOLU,  _______,           _______, RM_TOGG,
         RM_TOGG, RM_NEXT,  RM_VALU,  RM_HUEU, RM_SATU, RM_SPDU, _______, _______, _______, _______, _______,  _______, _______,  _______,           _______, _______,
-        _______, RM_PREV,  RM_VALD,  RM_HUED, RM_SATD, RM_SPDD, _______, _______, _______, _______, _______,  _______,           _______,           _______, _______,
+        _______, RM_PREV,  RM_VALD,  RM_HUED, RM_SATD, RM_SPDD, GAMING_TOG, _______, _______, _______, _______,  _______,           _______,           _______, _______,
         _______,           _______,  _______, _______, _______, _______, NK_TOGG, _______, _______, _______,  _______,           _______,           _______, _______,
         _______, _______,  _______,                             _______,                            _______,  _______, _______,  _______,  _______, _______, _______),
 
@@ -99,6 +99,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;         // Don't send H
             }
             return true;
+            
+        // Add a handler for H key in FN3 layer when in GAMING mode
+        case KC_H:
+            if (record->event.pressed) {
+                // Check if we're in GAMING layer and FN3 is active
+                if (layer_state_is(GAMING) && layer_state_is(_FN3)) {
+                    layer_off(GAMING);  // Turn off GAMING layer
+                    return false;      // Don't send H
+                }
+            }
+            return true;  // Process H normally in other cases
     }
     return true;
 }

@@ -36,6 +36,14 @@ The home row mods are configured as follows:
 - FN3: Accessed by holding the rightmost key in the bottom row
 - GAMING: Toggle on/off by pressing H while in FN3 layer (position of GAMING_TOG key)
 
+## Gaming Mode
+
+The dedicated gaming layer disables home row mods for a traditional typing experience, which is often preferred for gaming where holding keys is common. 
+
+### How to Enter/Exit Gaming Mode
+- **Enter Gaming Mode**: Press FN3 + H
+- **Exit Gaming Mode**: Press FN3 + H (while in gaming mode)
+
 ## Compilation and Flashing
 
 1. Set up your QMK environment following the [QMK Setup Guide](https://docs.qmk.fm/#/newbs_getting_started)
@@ -59,8 +67,4 @@ Home row mods work by sending modifier keys when held, and regular alphanumeric 
 For optimal usage:
 - Adjust to the new layout gradually
 - You may need to slightly adjust your typing style to avoid accidental modifier activations
-- Consider adjusting the TAPPING_TERM value if you experience issues
-
-## Gaming Mode
-
-The dedicated gaming layer disables home row mods for a traditional typing experience, which is often preferred for gaming where holding keys is common. To toggle the gaming mode, press the H key while in the FN3 layer. 
+- Consider adjusting the TAPPING_TERM value if you experience issues 
