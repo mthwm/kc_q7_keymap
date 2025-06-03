@@ -12,6 +12,7 @@ This repository contains a custom QMK keymap for the Keychron Q7 ANSI keyboard, 
   - GAMING layer with standard key positions (no home row mods)
 - **RGB Lighting Controls**: Comprehensive controls for RGB lighting effects
 - **Gaming Toggle**: Easily switch to a gaming-optimized layout without home row mods
+- **Adjusted Tapping Term**: Optimized for home row mods to reduce accidental modifier activations
 
 ## Home Row Mods Layout
 
@@ -43,6 +44,18 @@ The dedicated gaming layer disables home row mods for a traditional typing exper
 ### How to Enter/Exit Gaming Mode
 - **Enter Gaming Mode**: Press FN3 + H
 - **Exit Gaming Mode**: Press FN3 + H (while in gaming mode)
+
+## Tapping Term Configuration
+
+This keymap uses an extended tapping term to make home row mods more comfortable to use. The tapping term is set in the parent directory's `config.h` file:
+
+```c
+#define TAPPING_TERM 300
+```
+
+The tapping term defines how long a key needs to be held (in milliseconds) before it registers as a hold action rather than a tap. A higher value like 300ms makes it less likely to accidentally trigger modifiers during normal typing.
+
+If you find yourself accidentally triggering modifiers while typing, you might want to increase this value further. If the modifiers feel sluggish to activate, you might want to decrease it.
 
 ## Compilation and Flashing
 
