@@ -4,17 +4,16 @@ This repository contains a custom QMK keymap for the Keychron Q7 ANSI keyboard, 
 
 ## Features
 
-- **Home Row Mods**: Modifier keys (Ctrl, Shift, Alt, GUI) integrated into the home row keys (A, S, D, F, J, K, L, ;)
+- **Home Row Mods**: Modifier keys (Ctrl, Shift, Alt, GUI) integrated into the home row keys (A, S, D, F, J, K, L, ;) on the MAC_BASE layer
 - **Multiple Layers**:
-  - MAC_BASE: Default layer for macOS
-  - WIN_BASE: Windows/Linux compatible layer
+  - MAC_BASE: Default layer for macOS with home row mods enabled
+  - WIN_BASE: Gaming-optimized layer with standard key positions (no home row mods)
   - Function layers (FN1, FN2, FN3) for media controls, RGB lighting, and function keys
-  - GAMING layer with standard key positions (no home row mods)
+- **Hardware Switch Support**: Makes use of the built-in hardware switch for layer switching
 - **RGB Lighting Controls**: Comprehensive controls for RGB lighting effects
-- **Gaming Toggle**: Easily switch to a gaming-optimized layout without home row mods
-- **Adjusted Tapping Term**: Optimized for home row mods to reduce accidental modifier activations
+- **Optimized Layer Structure**: MAC_BASE layer has home row mods, while WIN_BASE layer provides standard key positions for gaming
 
-## Home Row Mods Layout
+## Home Row Mods Layout (MAC_BASE layer only)
 
 The home row mods are configured as follows:
 
@@ -32,25 +31,27 @@ The home row mods are configured as follows:
 
 ## Layer Switching
 
-- FN3: Accessed by holding the key to the right of Right Control in MAC_BASE layer
-- FN2: Accessed by holding the key to the right of Right Control in WIN_BASE layer
+- FN1: Accessed by holding the key to the right of Right Control in WIN_BASE layer
+- FN2: Accessed by holding the key to the right of Right Control in MAC_BASE layer
 - FN3: Accessed by holding the rightmost key in the bottom row
-- GAMING: Toggle on/off by pressing H while in FN3 layer (position of GAMING_TOG key)
+- WIN_BASE/MAC_BASE: Toggled using the built-in hardware switch
 
-## Gaming Mode
+## Layer Structure
 
-The dedicated gaming layer disables home row mods for a traditional typing experience, which is often preferred for gaming where holding keys is common. 
+### MAC_BASE Layer
+- Features home row mods for efficient typing
+- Based on the WIN_BASE layer layout but with home row mods enabled
 
-### How to Enter/Exit Gaming Mode
-- **Enter Gaming Mode**: Press FN3 + H
-- **Exit Gaming Mode**: Press FN3 + H (while in gaming mode)
+### WIN_BASE Layer
+- No home row mods to avoid accidental modifier activations during gaming
+- Provides a traditional typing experience
 
 ## Tapping Term Configuration
 
 This keymap uses an extended tapping term to make home row mods more comfortable to use. The tapping term is set in the parent directory's `config.h` file:
 
 ```c
-#define TAPPING_TERM 300
+#define TAPPING_TERM 250
 ```
 
 The tapping term defines how long a key needs to be held (in milliseconds) before it registers as a hold action rather than a tap. A higher value like 300ms makes it less likely to accidentally trigger modifiers during normal typing.
