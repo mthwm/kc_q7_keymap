@@ -81,4 +81,4 @@ Home row mods work by sending modifier keys when held, and regular alphanumeric 
 For optimal usage:
 - Adjust to the new layout gradually
 - You may need to slightly adjust your typing style to avoid accidental modifier activations
-- Consider adjusting the TAPPING_TERM value if you experience issues 
+- Consider adjusting the TAPPING_TERM value if you experience issues (250ms might feel very sluggish for most people, so 200ms is a better starting point)
